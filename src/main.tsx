@@ -1,13 +1,12 @@
-// src/main.tsx
-
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import App from './pages/App.tsx';
-import About from './components/About.tsx';
 import WorkInProgress from './components/WorkInProgress.tsx';
+
+import Home from './components/Home.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +16,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <About />
+        element: <Home />
+      },
+      {
+        path: "about",
+        element: <WorkInProgress />
       },
       {
         path: "expertise",
@@ -29,10 +32,6 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <WorkInProgress />
-      },
-      {
-        path: "about",
         element: <WorkInProgress />
       }
     ]
