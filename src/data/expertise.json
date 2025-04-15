@@ -1,0 +1,186 @@
+{
+  "expertise": [
+    {
+      "name": "Java",
+      "proficiency": 8,
+      "shortDescription": "Multiple years of non-work experience.",
+      "fullDescription": "I have studied Java in multiple schools and have a solid understanding of the fundamentals. It's my goto language for larger object oriented programs currently.",
+      "category": "Programming language",
+      "tags": [
+        "Java",
+        "Language",
+        "Programming"
+      ]
+    },
+    {
+      "name": "React",
+      "proficiency": 6,
+      "shortDescription": "My frontend framwork of choice.",
+      "fullDescription": "We tried React for a frontend group assignment and since React has been my go-to framework for frontend.",
+      "category": "Web",
+      "tags": [
+        "React",
+        "Web",
+        "Framework",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "Python",
+      "proficiency": 7,
+      "shortDescription": "For smaller personal projects and scripts",
+      "fullDescription": "Python is the language I choose for creating smaller applications and scripts for personal use. I don't pay as much attention to safety and scaleability since I use it mainly for myself and in smaller scale.",
+      "category": "Programming language",
+      "tags": [
+        "Python",
+        "Programming",
+        "Language",
+        "Script"
+      ]
+    },
+    {
+      "name": "HTML",
+      "proficiency": 7,
+      "shortDescription": "Can build and structure standard sites",
+      "fullDescription": "I am familiar with and can use the standard building blocks of a site. I can strucutre a decent site correctly with containers, and implement links and forms.",
+      "category": "Web",
+      "tags": [
+        "HTML",
+        "Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "proficiency": 5,
+      "shortDescription": "Know basic of kotlin and functional programming",
+      "fullDescription": "I've done a single course of functional programming where we used kotlin as the chosen language. I found it was a smooth transition from Java to kotlin and I ended up really enjoying the simplicity of the language.",
+      "category": "Programming language",
+      "tags": [
+        "Kotlin",
+        "Programming",
+        "Language",
+        "Functional"
+      ]
+    },
+    {
+      "name": "C",
+      "proficiency": 3,
+      "shortDescription": "Basic understanding of C",
+      "fullDescription": "I took CS50 which is a computer science course online that used C as a vessel to teach computer science. I have not worked anything in C after that.",
+      "category": "Programming language",
+      "tags": [
+        "C",
+        "Programming",
+        "Language"
+      ]
+    },
+    {
+      "name": "C#",
+      "proficiency": 6,
+      "shortDescription": "Used C# for school for a year.",
+      "fullDescription": "I've done a year of C# but I'm currently a little rusty. Since it's so similar to Java I could transfer that knowledge with ease. I also created some  smaller .NET projects that use C#.",
+      "category": "Programming language",
+      "tags": [
+        "C#",
+        "Programming",
+        "Language"
+      ]
+    },
+    {
+      "name": "Object-oriented programming",
+      "proficiency": 7,
+      "shortDescription": "Can work well with classes",
+      "fullDescription": "I have a good understanding of working with objects, classes and inheritence. I also have a basic understanding of interfaces.",
+      "category": "Concepts",
+      "tags": [
+        "OOP",
+        "Classes",
+        "Interfaces",
+        "Inheritence"
+      ]
+    },
+    {
+      "name": "Functional Programming",
+      "proficiency": 6,
+      "shortDescription": "Can write basic functional programming",
+      "fullDescription": "I have basic knowledge of Java streams and C# LINQ. I know most of the standard functions like maps, filters and sorting.",
+      "category": "Concepts",
+      "tags": [
+        "Functional",
+        "Programming",
+        "Stream",
+        "LINQ"
+      ]
+    },
+    {
+      "name": "Design Patterns",
+      "proficiency": 4,
+      "shortDescription": "I have dabbled in design patterns",
+      "fullDescription": "I know about some very basic patterns like factory, singleton and visitor patterns, but I don't have alot of experience of implementing them.",
+      "category": "Concepts",
+      "tags": [
+        "Design patterns",
+        "Factory"
+      ]
+    },
+    {
+      "name": "GIT",
+      "proficiency": 6,
+      "shortDescription": "I use GIT for most things nowadays",
+      "fullDescription": "We've done many group projects that are coordinated with GIT, and I know how to use branches, push and pull and validate others pulls. With that said we've also cheated alot and I might lack some work experience in larger teams.",
+      "category": "Tools",
+      "tags": [
+        "GIT",
+        "Version Control",
+        "Teams"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "proficiency": 5,
+      "shortDescription": "Worked with simpler databases",
+      "fullDescription": "I have experience with simpler databases and how to query them. Nothing bigger than 10 connected tables.",
+      "category": "Data",
+      "tags": [
+        "SQL",
+        "Data",
+        "Databases"
+      ]
+    },
+    {
+      "name": "AI",
+      "proficiency": 7,
+      "shortDescription": "Know how to use and not to use AI",
+      "fullDescription": "I have been a avid user of ChatGPT since it first broke out and I have a good understanding on how to use it without relying on it.",
+      "category": "Tools",
+      "tags": [
+        "AI",
+        "ChatGPT"
+      ]
+    },
+    {
+      "name": "CSS",
+      "proficiency": 6,
+      "shortDescription": "I can understand and edit basic css",
+      "fullDescription": "I am good at understanding and making smaller changes to existing css files but I'm not that good at designing myself. For basic stuff I can probably google or AI some good designs.",
+      "category": "Web",
+      "tags": [
+        "CSS",
+        "Styles",
+        "Web"
+      ]
+    },
+    {
+      "name": "JSON",
+      "proficiency": 6,
+      "shortDescription": "I can add and parse JSON data",
+      "fullDescription": "These very cards are stored as JSON data that I have created an editor for in python. I might struggle with larger JSON files but I know the basic structures of them.",
+      "category": "Data",
+      "tags": [
+        "JSON",
+        "Data"
+      ]
+    }
+  ]
+}
