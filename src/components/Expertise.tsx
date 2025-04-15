@@ -13,7 +13,7 @@ const Expertise = () => {
 
   const categories = [
     "All",
-    ...new Set(expertise.map((item) => item.category)),
+    ...new Set(expertise.map((item) => item.category).sort()),
   ];
 
   const filtered = expertise.filter((item) => {
