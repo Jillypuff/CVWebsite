@@ -1,5 +1,3 @@
-import React from "react";
-
 const WorkInProgress = () => {
   return (
     <section className="container my-5 text-center">
