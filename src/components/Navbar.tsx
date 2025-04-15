@@ -21,8 +21,8 @@ const Navigation: React.FC = () => {
             <Nav.Link as={Link} to="/projects" className="mx-2">
               Projects
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="mx-2">
-              Contact
+            <Nav.Link as={Link} to="/Resume" className="mx-2">
+              CV
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

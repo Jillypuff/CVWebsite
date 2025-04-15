@@ -7,6 +7,7 @@ import App from './pages/App.tsx';
 import WorkInProgress from './components/WorkInProgress.tsx';
 
 import Home from './components/Home.tsx';
+import Resume from './components/Resume.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
         element: <WorkInProgress />
       },
       {
-        path: "expertise",
-        element: <WorkInProgress />
+        path: "/resume",
+        element: <Resume />
       },
       {
         path: "projects",
