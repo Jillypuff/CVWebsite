@@ -4,10 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import App from './pages/App.tsx';
-import WorkInProgress from './components/WorkInProgress.tsx';
+import WorkInProgress from './pages/WorkInProgress.tsx';
+import About from './pages/About.tsx';
 
 import Home from './components/Home.tsx';
-import Resume from './components/Resume.tsx';
+import Resume from './pages/Resume.tsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <WorkInProgress />
+        element: <About />
       },
       {
         path: "/resume",

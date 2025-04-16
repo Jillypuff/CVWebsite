@@ -1,5 +1,4 @@
 import React from "react";
-import profilePic from "../assets/jesperlindberg.jpg";
 
 const About: React.FC = () => {
   return (
@@ -7,7 +6,7 @@ const About: React.FC = () => {
       <div className="row align-items-center justify-content-center">
         <div className="col-md-4 text-center mb-4 mb-md-0">
           <img
-            src={profilePic}
+            src="/images/profile.jpg"
             alt="Jesper Lindberg"
             className="img-fluid rounded shadow"
             style={{ maxHeight: "300px" }}

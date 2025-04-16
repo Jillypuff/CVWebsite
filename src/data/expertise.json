@@ -181,6 +181,30 @@
         "JSON",
         "Data"
       ]
+    },
+    {
+      "name": "Trello",
+      "proficiency": 5,
+      "shortDescription": "Used trello to manage group projects",
+      "fullDescription": "We've used trello to manage group project. I have also used trello to plan out and performe agile developments divided up in sprints.",
+      "category": "Tools",
+      "tags": [
+        "Trello",
+        "Agile",
+        "Sprint"
+      ]
+    },
+    {
+      "name": "Figma",
+      "proficiency": 6,
+      "shortDescription": "Can create simple prototypes to showcase apps",
+      "fullDescription": "Have worked on smaller prototypes for websites and mobile applications, to easier design the real application.",
+      "category": "Tools",
+      "tags": [
+        "Figma",
+        "Prototypes",
+        "Apps"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import About from "./About";
+import About from "./PersonalInfo";
 import Expertise from "./Expertise";
 
 const Home: React.FC = () => {
