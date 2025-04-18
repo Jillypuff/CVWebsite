@@ -118,32 +118,6 @@ const About = () => {
             </p>
           </Col>
         </Row>
-
-        <Row className="align-items-center mb-5">
-          <Col md={4}>
-            <img
-              src="/images/starsinourbedroomafterthewar.jpg"
-              alt="Music hobby"
-              className="img-fluid rounded shadow"
-            />
-          </Col>
-          <Col md={8}>
-            <h4>Music... again...</h4>
-            <p>
-              I could not possible list all the artists I love but I can add a
-              few of my favorite artist in no particular order. | Beach House |
-              Mew | World's End Girlfriend | Interpol | Ott | Uboa | Stars | Son
-              Lux | clipping. | NEØV | mizuirono_inu | Kendrick Lamar | Metric |
-              Sidewalks and Skeletons | Xinlisupreme | Carolina Polachek | Tame
-              Impala | Sufjan Stevens | JPEGMAFIA | Blaue Blume | Carbon Based
-              Lifeforms | KASHIWA DAISUKE | Elsiane | MONO | Let's Eat Grandma |
-              Dua Lipa | 100 Gecs | Mother Mother | Weyes Blood | Tyler the
-              Creator | Portishead | Earl Sweatshirt | AURORA | JID | alt-j |
-              Charli xcx | The Avalanches | Daft Punkt | Lana Del Rey | Lusine |
-              MF DOOM | Rival Consoles | You get one point for each artist you know!
-            </p>
-          </Col>
-        </Row>
       </Container>
     </>
   );
