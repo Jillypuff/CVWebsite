@@ -205,6 +205,18 @@
         "Prototypes",
         "Apps"
       ]
+    },
+    {
+      "name": "Javascript",
+      "proficiency": 5,
+      "shortDescription": "Basic understanding of Javascript.",
+      "fullDescription": "I have some experience with Javascript, from making validation scripts to create search and sorting forms.",
+      "category": "Programming language",
+      "tags": [
+        "Javascript",
+        "Web",
+        "Programming language"
+      ]
     }
   ]
 }
