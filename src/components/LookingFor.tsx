@@ -16,13 +16,13 @@ const LookingFor: React.FC = () => {
                 <strong>software development internship</strong> as part of my
                 LIA <i>(lärande i arbete)</i> for my education. The internship
                 would run from October 13, 2025 to March 13, 2026. My education
-                is in Java but I can take an internship in any related language.
+                is in Java but I can take an internship in any related language or field.
                 Ideally it would be a position in Uppsala but I am open to any
                 close commutes or remote work.
               </p>
               <p className="text-center text-muted">
                 <i>
-                  Open to remote or on-site positions in software engineering or
+                  Open to remote or on-site positions in software development or
                   related fields.
                 </i>
               </p>
