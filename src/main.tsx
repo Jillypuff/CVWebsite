@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './pages/App.tsx';
 import WorkInProgress from './pages/WorkInProgress.tsx';
 import About from './pages/About.tsx';
+import Projects from './pages/Projects.tsx';
 import Contact from './pages/Contact.tsx';
 
 import Home from './components/Home.tsx';
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "projects",
-        element: <WorkInProgress />
+        element: <Projects />
       },
       {
         path: "contact",

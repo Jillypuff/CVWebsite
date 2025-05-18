@@ -1,0 +1,24 @@
+[
+    {
+        "id": 0,
+        "name": "dog",
+        "category": "animals",
+        "acceptable_answers": ["dog", "puppy", "hound"],
+        "image_sources": [
+            "/images/guess_the_picture/dog_1.jpg",
+            "/images/guess_the_picture/dog_2.jpg",
+            "/images/guess_the_picture/puppy_1.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "cat",
+        "category": "animals",
+        "acceptable_answers": ["cat", "kitten", "feline"],
+        "image_sources": [
+            "/images/guess_the_picture/cat_1.jpg",
+            "/images/guess_the_picture/cat_2.jpg",
+            "/images/guess_the_picture/kitten_1.jpg"
+        ]
+    }
+]
