@@ -9,7 +9,7 @@ export const GuessThePicture: React.FC = () => {
   const [game, setGame] = useState<GuessGame | null>(null);
 
   useEffect(() => {
-    const entry = gameData[0]; // Optionally randomize later
+    const entry = gameData[Math.floor(Math.random() * gameData.length)];
     const image = entry.image_sources[Math.floor(Math.random() * entry.image_sources.length)];
 
     if (canvasRef.current) {
