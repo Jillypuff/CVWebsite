@@ -20,5 +20,16 @@
             "/images/guess_the_picture/cat_2.jpg",
             "/images/guess_the_picture/kitten_1.jpg"
         ]
+    },
+    {
+        "id": 2,
+        "name": "rabbit",
+        "category": "animals",
+        "acceptable_answers": ["rabbit", "bunny", "hare"],
+        "image_sources": [
+            "/images/guess_the_picture/rabbit_1.jpg",
+            "/images/guess_the_picture/rabbit_2.jpg",
+            "/images/guess_the_picture/rabbit_3.jpg"
+        ]
     }
 ]

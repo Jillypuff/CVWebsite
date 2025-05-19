@@ -8,14 +8,20 @@ export const GuessThePicture: React.FC = () => {
   const [result, setResult] = useState("");
   const [game, setGame] = useState<GuessGame | null>(null);
 
-  useEffect(() => {
+  const startNewGame = () => {
     const entry = gameData[Math.floor(Math.random() * gameData.length)];
     const image = entry.image_sources[Math.floor(Math.random() * entry.image_sources.length)];
 
     if (canvasRef.current) {
       const newGame = new GuessGame(image, entry.acceptable_answers, canvasRef.current);
       setGame(newGame);
+      setGuess("");
+      setResult("");
     }
+  }
+
+  useEffect(() => {
+    startNewGame();
   }, []);
 
   const handleGuess = () => {
@@ -28,8 +34,11 @@ export const GuessThePicture: React.FC = () => {
 
   return (
     <div className="guess-the-picture">
-      <canvas ref={canvasRef} style={{ maxWidth: "100%", border: "1px solid #ccc" }} />
-      <div>
+      <div className="canvas-container">
+        <canvas ref={canvasRef} />
+      </div>
+
+      <div className="controls">
         <input
           type="text"
           value={guess}
@@ -37,8 +46,10 @@ export const GuessThePicture: React.FC = () => {
           placeholder="Enter your guess"
         />
         <button onClick={handleGuess}>Guess</button>
+        <button onClick={startNewGame}>Play Again</button>
       </div>
-      <p>{result}</p>
+
+      <p className="result">{result}</p>
     </div>
   );
 };
