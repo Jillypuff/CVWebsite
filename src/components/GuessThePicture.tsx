@@ -29,7 +29,7 @@ export const GuessThePicture: React.FC = () => {
 
     const correct = game.guess(guess);
     setResult(correct ? "Correct!" : "Try again!");
-    if (correct) setGuess("");
+    setGuess("");
   };
 
   return (
@@ -49,7 +49,7 @@ export const GuessThePicture: React.FC = () => {
         <button onClick={startNewGame}>Play Again</button>
       </div>
 
-      <p className="result">{result}</p>
+      <p className="result">Result: {result}</p>
     </div>
   );
 };

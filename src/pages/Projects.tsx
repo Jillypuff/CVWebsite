@@ -8,6 +8,7 @@ const Projects = () => {
 
       <Project title="Guess the picture game">
         <p>Guess what you see in the picture. The earlier you get it the better!</p>
+        <p><i>(I only have a few images but it's a working prototype.)</i></p>
         <GuessThePicture />
       </Project>
 
