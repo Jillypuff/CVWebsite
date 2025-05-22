@@ -31,5 +31,16 @@
             "/images/guess_the_picture/rabbit_2.jpg",
             "/images/guess_the_picture/rabbit_3.jpg"
         ]
+    },
+        {
+        "id": 3,
+        "name": "duck",
+        "category": "animals",
+        "acceptable_answers": ["duck", "mallard", "goose"],
+        "image_sources": [
+            "/images/guess_the_picture/duck_1.jpg",
+            "/images/guess_the_picture/duck_2.jpg",
+            "/images/guess_the_picture/duck_3.jpg"
+        ]
     }
 ]

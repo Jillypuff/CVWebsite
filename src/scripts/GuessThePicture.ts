@@ -23,17 +23,18 @@ export class GuessGame {
     drawBlurredImage(canvas, imageUrl, initialBlur);
   }
 
-  guess(answer: string): boolean {
+  guess(answer: string): number {
+    // Return 0 if correct, 1 if incorrect but still blurred, 2 if game over
     const guess = answer.trim().toLowerCase();
 
     if (this.state.correctAnswers.includes(guess)) {
       this.state.currentBlur = 0;
       drawBlurredImage(this.state.canvas, this.state.imageUrl, 0);
-      return true;
+      return 0
     }
 
     this.state.currentBlur = Math.max(0, this.state.currentBlur - this.state.blurStep);
     drawBlurredImage(this.state.canvas, this.state.imageUrl, this.state.currentBlur);
-    return false;
+    return this.state.currentBlur <= 0 ? 2 : 1;
   }
 }

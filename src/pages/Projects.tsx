@@ -7,8 +7,8 @@ const Projects = () => {
       <h1 className="text-4xl font-bold text-center mb-10">Projects</h1>
 
       <Project title="Guess the picture game">
-        <p>Guess what you see in the picture. The earlier you get it the better!</p>
-        <p><i>(I only have a few images but it's a working prototype.)</i></p>
+        <p>Guess what you see in the blurred picture. Each guess unblurs the picture a little. The earlier you get it the better!</p>
+        <p><i>(I only have a few images but it's a working prototype. Also pretend that there is more than one category.)</i></p>
         <GuessThePicture />
       </Project>
 
