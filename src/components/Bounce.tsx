@@ -256,7 +256,7 @@ const Bounce: React.FC = () => {
             </div>
             <div className={controlGroupClass}>
               <label htmlFor="restitution" className={labelClass}>
-                Bounciness (Positive gains velocity each bounce):
+                Bounciness (Higher than 1 gains velocity each bounce):
                 <span className={valueDisplayClass}>
                   {restitution.toFixed(2)}
                 </span>
