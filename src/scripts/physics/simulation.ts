@@ -18,6 +18,7 @@ export class PhysicsSimulation {
 
   private nextBallId: number;
   private nextObstacleId: number;
+  private jitterAmount: number = 0.2;
 
   constructor(config: SimulationConfig) {
     this.balls = [];
@@ -121,7 +122,6 @@ export class PhysicsSimulation {
   private handleWallCollisions(ball: Ball): void {
     const { restitution, canvasWidth, canvasHeight } = this.config;
     const minSpeedToStop = 0.05;
-    const jitterAmount = 0.05;
 
     if (ball.position.y + ball.radius > canvasHeight) {
       ball.position.y = canvasHeight - ball.radius;
@@ -166,21 +166,13 @@ export class PhysicsSimulation {
       ball.velocity.x = 0;
     }
 
-    if (
-      ball.position.y + ball.radius >= canvasHeight ||
-      ball.position.y - ball.radius <= 0 ||
-      ball.position.x + ball.radius >= canvasWidth ||
-      ball.position.x - ball.radius <= 0
-    ) {
-      ball.velocity.x += (Math.random() - 0.5) * jitterAmount;
-      ball.velocity.y += (Math.random() - 0.5) * jitterAmount;
-    }
+    ball.velocity.x += (Math.random() - 0.5) * this.jitterAmount;
+    ball.velocity.y += (Math.random() - 0.5) * this.jitterAmount;
   }
 
   private handleBallObstacleCollision(ball: Ball, obstacle: Obstacle): void {
     const { restitution } = this.config;
     const minSpeedToStop = 0.05;
-    const jitterAmount = 0.05;
 
     const closestX = Math.max(
       obstacle.position.x,
@@ -219,8 +211,8 @@ export class PhysicsSimulation {
         ball.velocity = new Vector2D(0, 0);
       }
 
-      ball.velocity.x += (Math.random() - 0.5) * jitterAmount;
-      ball.velocity.y += (Math.random() - 0.5) * jitterAmount;
+      ball.velocity.x += (Math.random() - 0.5) * this.jitterAmount;
+      ball.velocity.y += (Math.random() - 0.5) * this.jitterAmount;
     }
   }
 

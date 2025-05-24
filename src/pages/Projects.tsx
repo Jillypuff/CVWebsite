@@ -15,7 +15,7 @@ const Projects = () => {
 
       <Project title="Physics Playground">
         <p>Play around with the physics simulator.</p>
-        <p><i><small>(Built togheter with AI)</small></i></p>
+        <p><i><small>(Built togheter with AI, does not represent real physics as there is a small jitter that will always keep it going.)</small></i></p>
         <Bounce />
       </Project>
     </div>

@@ -131,7 +131,7 @@ const Bounce: React.FC = () => {
           console.warn("Could not place all obstacles without overlap.");
       }
     },
-    [canvasSize]
+    [canvasSize, ballRadius]
   );
 
   useEffect(() => {
@@ -223,113 +223,117 @@ const Bounce: React.FC = () => {
   };
 
   const controlGroupClass = "mb-4";
-  const labelClass = "block text-sm font-medium text-slate-700 mb-1";
-  const valueDisplayClass = "text-sm text-slate-500 ml-2";
-
+  const labelClass =
+    "block text-sm font-medium text-gray-700 mb-1 flex justify-between items-center"; // Updated for better alignment
+  const valueDisplayClass = "text-blue-600 font-semibold";
   return (
     <div className="flex flex-col items-center p-2 bg-slate-100 min-h-screen">
-      <div className="bg-white p-4 rounded-lg shadow-xl w-full max-w-[500px] mb-4">
-        <div className={controlGroupClass}>
-          <label htmlFor="gravity" className={labelClass}>
-            Gravity:{" "}
-            <span className={valueDisplayClass}>{gravityY.toFixed(2)}</span>
-          </label>
-          <Slider
-            value={gravityY}
-            min={0}
-            max={2}
-            step={0.01}
-            onChange={(_, val) => setGravityY(Number(val))}
-            aria-labelledby="gravity"
-          />
+      <div className="flex flex-col md:flex-row w-full max-w-4xl gap-4 items-stretch">
+        <div className="flex-1 flex justify-center items-center mb-4 md:mb-0">
+          <canvas
+            ref={canvasRef}
+            width={canvasSize}
+            height={canvasSize}
+            style={{ width: "100%", maxWidth: canvasSize, height: "auto" }}
+            className="border border-slate-400 bg-slate-200 rounded-lg shadow-md"
+          ></canvas>
         </div>
-
-        <div className={controlGroupClass}>
-          <label htmlFor="restitution" className={labelClass}>
-            Bounciness (Positive gains velocity each bounce):{" "}
-            <span className={valueDisplayClass}>{restitution.toFixed(2)}</span>
-          </label>
-          <Slider
-            value={restitution}
-            min={0}
-            max={1.5}
-            step={0.01}
-            onChange={(_, val) => setRestitution(Number(val))}
-            aria-labelledby="restitution"
-          />
+        <div className="bg-white p-4 rounded-lg shadow-xl w-full md:w-[320px] flex flex-col justify-between">
+          <div>
+            <div className={controlGroupClass}>
+              <label htmlFor="gravity" className={labelClass}>
+                Gravity:
+                <span className={valueDisplayClass}>{gravityY.toFixed(2)}</span>
+              </label>
+              <Slider
+                value={gravityY}
+                min={0}
+                max={2}
+                step={0.01}
+                onChange={(_, val) => setGravityY(Number(val))}
+                aria-labelledby="gravity"
+              />
+            </div>
+            <div className={controlGroupClass}>
+              <label htmlFor="restitution" className={labelClass}>
+                Bounciness (Positive gains velocity each bounce):
+                <span className={valueDisplayClass}>
+                  {restitution.toFixed(2)}
+                </span>
+              </label>
+              <Slider
+                value={restitution}
+                min={0}
+                max={1.5}
+                step={0.01}
+                onChange={(_, val) => setRestitution(Number(val))}
+                aria-labelledby="restitution"
+              />
+            </div>
+            <div className={controlGroupClass}>
+              <label htmlFor="worldFriction" className={labelClass}>
+                World Friction:
+                <span className={valueDisplayClass}>
+                  {worldFriction.toFixed(3)}
+                </span>
+              </label>
+              <Slider
+                value={worldFriction}
+                min={0}
+                max={0.1}
+                step={0.001}
+                onChange={(_, val) => setWorldFriction(Number(val))}
+                aria-labelledby="worldFriction"
+              />
+            </div>
+            <div className={controlGroupClass}>
+              <label htmlFor="ballRadius" className={labelClass}>
+                Ball Radius:
+                <span className={valueDisplayClass}>{ballRadius}</span>
+              </label>
+              <Slider
+                value={ballRadius}
+                min={5}
+                max={25}
+                step={1}
+                onChange={(_, val) => setBallRadius(Number(val))}
+                aria-labelledby="ballRadius"
+              />
+            </div>
+            <div className={controlGroupClass}>
+              <label htmlFor="numObstacles" className={labelClass}>
+                Obstacles:
+                <span className={valueDisplayClass}>{numObstacles}</span>
+              </label>
+              <Slider
+                value={numObstacles}
+                min={0}
+                max={10}
+                step={1}
+                onChange={(_, val) => setNumObstacles(Number(val))}
+                aria-labelledby="numObstacles"
+              />
+            </div>
+          </div>
+          <div className="mt-4 flex flex-col gap-2">
+            <Button
+              onClick={handleAddBall}
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
+              Drop Ball
+            </Button>
+            <Button
+              onClick={handleResetSimulation}
+              variant="contained"
+              color="error"
+              fullWidth
+            >
+              Reset Simulation
+            </Button>
+          </div>
         </div>
-
-        <div className={controlGroupClass}>
-          <label htmlFor="worldFriction" className={labelClass}>
-            World Friction:{" "}
-            <span className={valueDisplayClass}>
-              {worldFriction.toFixed(3)}
-            </span>
-          </label>
-          <Slider
-            value={worldFriction}
-            min={0}
-            max={0.1}
-            step={0.001}
-            onChange={(_, val) => setWorldFriction(Number(val))}
-            aria-labelledby="worldFriction"
-          />
-        </div>
-
-        <div className={controlGroupClass}>
-          <label htmlFor="ballRadius" className={labelClass}>
-            Ball Radius: <span className={valueDisplayClass}>{ballRadius}</span>
-          </label>
-          <Slider
-            value={ballRadius}
-            min={5}
-            max={25}
-            step={1}
-            onChange={(_, val) => setBallRadius(Number(val))}
-            aria-labelledby="ballRadius"
-          />
-        </div>
-
-        <div className={controlGroupClass}>
-          <label htmlFor="numObstacles" className={labelClass}>
-            Obstacles: <span className={valueDisplayClass}>{numObstacles}</span>
-          </label>
-          <Slider
-            value={numObstacles}
-            min={0}
-            max={10}
-            step={1}
-            onChange={(_, val) => setNumObstacles(Number(val))}
-            aria-labelledby="numObstacles"
-          />
-        </div>
-
-        <Button
-          onClick={handleAddBall}
-          variant="contained"
-          color="primary"
-          fullWidth
-          sx={{ mb: 2 }}
-        >
-          Drop Ball
-        </Button>
-        <Button
-          onClick={handleResetSimulation}
-          variant="contained"
-          color="error"
-          fullWidth
-        >
-          Reset Simulation
-        </Button>
-      </div>
-      <div className="w-full flex justify-center">
-        <canvas
-          ref={canvasRef}
-          width={canvasSize}
-          height={canvasSize}
-          style={{ width: "100%", maxWidth: canvasSize, height: "auto" }}
-          className="border border-slate-400 bg-slate-200 rounded-lg shadow-md"
-        ></canvas>
       </div>
     </div>
   );
