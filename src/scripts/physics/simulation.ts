@@ -87,7 +87,7 @@ export class PhysicsSimulation {
         );
       }
 
-      const maxVelocity = this.config.maxVelocity ?? 20;
+      const maxVelocity = this.config.maxVelocity ?? 50;
       if (ball.velocity.magnitude() > maxVelocity) {
         ball.velocity = ball.velocity.normalize().multiply(maxVelocity);
       }
