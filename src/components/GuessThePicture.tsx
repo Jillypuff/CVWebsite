@@ -3,7 +3,7 @@ import { GuessGame } from "../scripts/GuessThePicture";
 import gameData from "../data/guess_the_picture.json";
 import { Dropdown, Button, Form, Row, Col, Container } from "react-bootstrap";
 
-export const GuessThePicture: React.FC = () => {
+const GuessThePicture: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [guess, setGuess] = useState("");
   const [result, setResult] = useState("");
@@ -145,3 +145,5 @@ export const GuessThePicture: React.FC = () => {
     </div>
   );
 };
+
+export default GuessThePicture;

@@ -1,5 +1,6 @@
 import Project from "../components/Project";
-import { GuessThePicture } from "../components/GuessThePicture";
+import GuessThePicture from "../components/GuessThePicture";
+import Bounce from "../components/Bounce";
 
 const Projects = () => {
   return (
@@ -12,8 +13,10 @@ const Projects = () => {
         <GuessThePicture />
       </Project>
 
-      <Project title="Placeholder Project">
-        <p>Placeholder for future projects</p>
+      <Project title="Physics Playground">
+        <p>Play around with the physics simulator.</p>
+        <p><i><small>(Built togheter with AI)</small></i></p>
+        <Bounce />
       </Project>
     </div>
   );
