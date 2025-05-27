@@ -11,16 +11,16 @@ const playTone = (value: number, maxValue: number, muted: boolean) => {
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
 
-  // Map value to frequency range (e.g., 100Hz to 1000Hz)
   const frequency = 100 + (value / maxValue) * 900;
   oscillator.frequency.value = frequency;
   oscillator.type = "sine";
 
+  gainNode.gain.value = 0.2;
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
 
   oscillator.start();
-  oscillator.stop(audioCtx.currentTime + 0.1); // short beep
+  oscillator.stop(audioCtx.currentTime + 0.1);
 };
 
 const SortingVisualizer: React.FC = () => {
