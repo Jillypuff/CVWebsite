@@ -131,3 +131,36 @@ img {
 .project-content {
   margin-top: 1rem;
 }
+
+.visualizer-container {
+  background-color: black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  height: 400px;
+  max-width: 90vw;
+  border: 2px solid #fff;
+}
+
+.visualizer-bar {
+  background-color: white;
+  margin: 0 1px;
+  transition: height 0.3s ease;
+}
+
+.custom-checkbox .form-check-input {
+  border: 2px solid black;
+  width: 18px;
+  height: 18px;
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: black;
+  border-color: black;
+}
+
+.custom-checkbox .form-check-label {
+  user-select: none;
+}

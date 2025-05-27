@@ -1,6 +1,7 @@
 import Project from "../components/Project";
 import GuessThePicture from "../components/GuessThePicture";
 import Bounce from "../components/Bounce";
+import SortingVisualizer from "../components/SortingVisualizer";
 
 const Projects = () => {
   return (
@@ -17,6 +18,12 @@ const Projects = () => {
         <p>Play around with the physics simulator.</p>
         <p><i><small>(Built togheter with AI, does not represent real physics as there is a small jitter that will always keep it going.)</small></i></p>
         <Bounce />
+      </Project>
+
+      <Project title="Sorting Visualizer">
+        <p>Visualize how different sorting algorithms work.</p>
+        <p><i>(You can change the array size and the speed of the animation.)</i></p>
+        <SortingVisualizer />
       </Project>
     </div>
   );
