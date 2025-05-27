@@ -15,12 +15,11 @@ const playTone = (value: number, maxValue: number, muted: boolean) => {
   oscillator.frequency.value = frequency;
   oscillator.type = "sine";
 
-  // Staccato envelope
   const now = audioCtx.currentTime;
   gainNode.gain.setValueAtTime(0, now);
-  gainNode.gain.linearRampToValueAtTime(0.2, now + 0.01); // Quick fade in
-  gainNode.gain.linearRampToValueAtTime(0, now + 0.08);   // Quick fade outo
-  
+  gainNode.gain.linearRampToValueAtTime(0.2, now + 0.01);
+  gainNode.gain.linearRampToValueAtTime(0, now + 0.08);
+
 
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
