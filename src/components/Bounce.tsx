@@ -131,7 +131,7 @@ const Bounce: React.FC = () => {
           console.warn("Could not place all obstacles without overlap.");
       }
     },
-    [canvasSize, ballRadius]
+    [canvasSize]
   );
 
   useEffect(() => {

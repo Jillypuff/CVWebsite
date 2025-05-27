@@ -87,7 +87,7 @@ export class PhysicsSimulation {
         );
       }
 
-      const maxVelocity = this.config.maxVelocity ?? 50;
+      const maxVelocity = this.config.maxVelocity ?? 30;
       if (ball.velocity.magnitude() > maxVelocity) {
         ball.velocity = ball.velocity.normalize().multiply(maxVelocity);
       }
@@ -122,10 +122,12 @@ export class PhysicsSimulation {
   private handleWallCollisions(ball: Ball): void {
     const { restitution, canvasWidth, canvasHeight } = this.config;
     const minSpeedToStop = 0.05;
+    let normal: Vector2D | null = null;
 
     if (ball.position.y + ball.radius > canvasHeight) {
       ball.position.y = canvasHeight - ball.radius;
       ball.velocity.y *= -restitution;
+      normal = new Vector2D(0, -1);
       if (
         restitution < 1.0 &&
         Math.abs(ball.velocity.y) < minSpeedToStop &&
@@ -137,6 +139,7 @@ export class PhysicsSimulation {
     if (ball.position.y - ball.radius < 0) {
       ball.position.y = ball.radius;
       ball.velocity.y *= -restitution;
+      normal = new Vector2D(0, 1);
       if (restitution < 1.0 && Math.abs(ball.velocity.y) < minSpeedToStop) {
         ball.velocity.y = 0;
       }
@@ -144,6 +147,7 @@ export class PhysicsSimulation {
     if (ball.position.x + ball.radius > canvasWidth) {
       ball.position.x = canvasWidth - ball.radius;
       ball.velocity.x *= -restitution;
+      normal = new Vector2D(-1, 0);
       if (restitution < 1.0 && Math.abs(ball.velocity.x) < minSpeedToStop) {
         ball.velocity.x = 0;
       }
@@ -151,23 +155,17 @@ export class PhysicsSimulation {
     if (ball.position.x - ball.radius < 0) {
       ball.position.x = ball.radius;
       ball.velocity.x *= -restitution;
+      normal = new Vector2D(1, 0);
       if (restitution < 1.0 && Math.abs(ball.velocity.x) < minSpeedToStop) {
         ball.velocity.x = 0;
       }
     }
 
-    if (
-      restitution < 1.0 &&
-      ball.velocity.y === 0 &&
-      ball.position.y >= canvasHeight - ball.radius - 0.1 &&
-      Math.abs(ball.velocity.x) < minSpeedToStop &&
-      this.config.gravity.y > 0.01
-    ) {
-      ball.velocity.x = 0;
+    if (normal) {
+      const perp = new Vector2D(-normal.y, normal.x);
+      const jitter = (Math.random() - 0.5) * this.jitterAmount * 2;
+      ball.velocity = ball.velocity.add(perp.multiply(jitter));
     }
-
-    ball.velocity.x += (Math.random() - 0.5) * this.jitterAmount;
-    ball.velocity.y += (Math.random() - 0.5) * this.jitterAmount;
   }
 
   private handleBallObstacleCollision(ball: Ball, obstacle: Obstacle): void {
@@ -211,8 +209,9 @@ export class PhysicsSimulation {
         ball.velocity = new Vector2D(0, 0);
       }
 
-      ball.velocity.x += (Math.random() - 0.5) * this.jitterAmount;
-      ball.velocity.y += (Math.random() - 0.5) * this.jitterAmount;
+      const perp = new Vector2D(-normal.y, normal.x);
+      const jitter = (Math.random() - 0.5) * this.jitterAmount * 2;
+      ball.velocity = ball.velocity.add(perp.multiply(jitter));
     }
   }
 
