@@ -15,12 +15,24 @@ const playTone = (value: number, maxValue: number, muted: boolean) => {
   oscillator.frequency.value = frequency;
   oscillator.type = "sine";
 
-  gainNode.gain.value = 0.2;
+  // Staccato envelope
+  const now = audioCtx.currentTime;
+  gainNode.gain.setValueAtTime(0, now);
+  gainNode.gain.linearRampToValueAtTime(0.2, now + 0.01); // Quick fade in
+  gainNode.gain.linearRampToValueAtTime(0, now + 0.08);   // Quick fade outo
+  
+
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
 
-  oscillator.start();
-  oscillator.stop(audioCtx.currentTime + 0.1);
+  oscillator.start(now);
+  oscillator.stop(now + 0.09);
+
+  oscillator.onended = () => {
+    oscillator.disconnect();
+    gainNode.disconnect();
+    audioCtx.close();
+  };
 };
 
 const SortingVisualizer: React.FC = () => {
